@@ -1,0 +1,6 @@
+[main]
+CIME_MODEL=cesm
+PROJECT=NTDD0002
+CHARGE_ACCOUNT=NTDD0002
+MAIL_USER=gdicker@ucar.edu
+MAIL_TYPE=begin,fail,end
