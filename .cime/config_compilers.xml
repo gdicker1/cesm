@@ -36,17 +36,19 @@
   </CPPDEFS>
   <CXX_LINKER>CXX</CXX_LINKER>
   <CXX_LIBS>
-    <append> -L/glade/work/cponder/SHARE/Utils/NetCDF-F/4.4.5/PGI-19.4_OpenMPI-3.1.4_NetCDF-C-4.7.0/lib </append>
-    <append> -L/glade/work/cponder/SHARE/Utils/NetCDF-C/4.7.0/PGI-19.4_OpenMPI-3.1.4_PNetCDF-1.11.1_HDF5-1.10.5/lib </append>
   </CXX_LIBS>
   <CXX_LDFLAGS> 
     <append> -I/glade/work/cponder/SHARE/Utils/NetCDF-F/4.4.5/PGI-19.4_OpenMPI-3.1.4_NetCDF-C-4.7.0/include </append>
+    <append> -L/glade/work/cponder/SHARE/Utils/NetCDF-C/4.7.0/PGI-19.4_OpenMPI-3.1.4_PNetCDF-1.11.1_HDF5-1.10.5/lib </append>
+    <append> -lnetcdf </append>
+    <append> -L/glade/work/cponder/SHARE/Utils/NetCDF-F/4.4.5/PGI-19.4_OpenMPI-3.1.4_NetCDF-C-4.7.0/lib </append>
+    <append> -lnetcdff </append>
   </CXX_LDFLAGS> 
   <FC_AUTO_R8>
     <base> -r8 </base>
   </FC_AUTO_R8>
   <FFLAGS>
-    <base> -I/glade/work/cponder/SHARE/Utils/NetCDF-F/4.4.5/PGI-19.4_OpenMPI-3.1.4_NetCDF-C-4.7.0/include -L/glade/work/cponder/SHARE/Utils/NetCDF-C/4.7.0/PGI-19.4_OpenMPI-3.1.4_PNetCDF-1.11.1_HDF5-1.10.5/lib -L/glade/work/cponder/SHARE/Utils/NetCDF-F/4.4.5/PGI-19.4_OpenMPI-3.1.4_NetCDF-C-4.7.0/lib -i4 -pg -gopt  -time -Mextend -Mpreprocess -byteswapio -Mflushz -Kieee </base>
+    <base> -i4 -pg -gopt  -time -Mextend -Mpreprocess -byteswapio -Mflushz -Kieee </base>
     <append compile_threaded="true"> -mp </append>
     <append DEBUG="TRUE"> -O0 -g -Ktrap=fp -Mbounds -Kieee </append>
     <append MODEL="datm"> -Mnovect </append>
@@ -55,6 +57,7 @@
     <append MODEL="dwav"> -Mnovect </append>
     <append MODEL="dice"> -Mnovect </append>
     <append MODEL="docn"> -Mnovect </append>
+    <append> -I/glade/work/cponder/SHARE/Utils/NetCDF-F/4.4.5/PGI-19.4_OpenMPI-3.1.4_NetCDF-C-4.7.0/include </append>
   </FFLAGS>
   <FFLAGS_NOOPT>
     <base> -O0 -pg -g -Ktrap=fp -Mpreprocess -Mbounds -Kieee  </base>
@@ -75,10 +78,12 @@
   <HAS_F2008_CONTIGUOUS>FALSE</HAS_F2008_CONTIGUOUS>
   <LDFLAGS>
     <base> -pg -time -Wl,--allow-multiple-definition </base>
-    <append> -L/glade/work/cponder/SHARE/Utils/NetCDF-F/4.4.5/PGI-19.4_OpenMPI-3.1.4_NetCDF-C-4.7.0/lib </append>
-    <append> -L/glade/work/cponder/SHARE/Utils/NetCDF-C/4.7.0/PGI-19.4_OpenMPI-3.1.4_PNetCDF-1.11.1_HDF5-1.10.5/lib </append>
-    <append> -I/glade/work/cponder/SHARE/Utils/NetCDF-F/4.4.5/PGI-19.4_OpenMPI-3.1.4_NetCDF-C-4.7.0/include </append>
     <append compile_threaded="true"> -mp </append>
+    <append> -I/glade/work/cponder/SHARE/Utils/NetCDF-F/4.4.5/PGI-19.4_OpenMPI-3.1.4_NetCDF-C-4.7.0/include </append>
+    <append> -L/glade/work/cponder/SHARE/Utils/NetCDF-C/4.7.0/PGI-19.4_OpenMPI-3.1.4_PNetCDF-1.11.1_HDF5-1.10.5/lib </append>
+    <append> -lnetcdf </append>
+    <append> -L/glade/work/cponder/SHARE/Utils/NetCDF-F/4.4.5/PGI-19.4_OpenMPI-3.1.4_NetCDF-C-4.7.0/lib </append>
+    <append> -lnetcdff </append>
   </LDFLAGS>
   <MPICC> mpicc </MPICC>
   <MPICXX> mpicxx </MPICXX>
