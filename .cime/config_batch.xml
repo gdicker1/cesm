@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <config_batch version="2.0">
-   <batch_system type="slurm" MACH="casper" >
+   <batch_system MACH="casper" type="slurm">
       <batch_query per_job_arg="-j">squeue</batch_query>
       <batch_submit>sbatch</batch_submit>
       <batch_cancel>scancel</batch_cancel>
@@ -15,13 +15,10 @@
         <arg flag="--export=CESMDATAROOT=$CESMDATAROOT"/>
       </submit_args>
       <directives>
-        <directive> --job-name={{ job_id }}</directive>
-        <directive> --nodes={{ num_nodes }}</directive>
-        <directive> --ntasks-per-node={{ tasks_per_node }}</directive>
-        <directive> --output={{ job_id }}   </directive>
         <directive> --time=$JOB_WALLCLOCK_TIME </directive>
         <directive> --account=$PROJECT </directive>
         <directive> --partition=dav </directive>
+        <directive> --reservation=casper_8xV100 </directive>
       </directives>
       <queues>
        <queue nodemin="1" nodemax="20" default="true">regular</queue> 
