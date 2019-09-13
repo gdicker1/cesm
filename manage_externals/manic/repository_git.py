@@ -59,8 +59,7 @@ class GitRepository(Repository):
         """
         repo_dir_path = os.path.join(base_dir_path, repo_dir_name)
         repo_dir_exists = os.path.exists(repo_dir_path)
-        if (repo_dir_exists and not os.listdir(
-                repo_dir_path)) or not repo_dir_exists:
+        if (repo_dir_exists and not os.listdir(repo_dir_path)) or not repo_dir_exists:
             self._clone_repo(base_dir_path, repo_dir_name, verbosity)
         self._checkout_ref(repo_dir_path, verbosity, recursive)
         gmpath = os.path.join(repo_dir_path,
