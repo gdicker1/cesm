@@ -1,0 +1,5 @@
+In order to use these .xml files for the Casper machine, you need to make
+a .cime folder in '~/.cime' and copy these .xml files there
+
+$> mkdir ~/.cime
+$> cp cime_userconfig/* ~/.cime

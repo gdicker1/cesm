@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config_batch version="2.1">
+  <batch_system type="slurm" MACH="casper">
+    <batch_submit>sbatch</batch_submit>
+    <submit_args>
+      <arg flag="--time" name="$JOB_WALLCLOCK_TIME"/>
+      <arg flag="-p" name="$JOB_QUEUE"/>
+      <arg flag="--gres=gpu:v100:4"/>
+      <arg flag="--account" name="$PROJECT"/>
+      <arg flag="--mem=0"/>
+      <arg flag="--reservation=TDD_MPAS"/>
+    </submit_args>
+    <queues>
+      <queue nodemin="1" nodemax="96" default="true">dav</queue>
+    </queues>
+  </batch_system>
+</config_batch>
